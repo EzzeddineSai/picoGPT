@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+import math
+
 def softmax(x, dim=-1):
   """ computes softmax over a given dim """
   exponential = torch.exp(x)
