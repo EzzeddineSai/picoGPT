@@ -2,36 +2,6 @@ import torch
 import torch.nn as nn
 import math
 
-class Decoder():
-  """
-  takes the path to a vocab json file and a list of special tokens
-  vocab file should be a dictionary with tokens as keys and ids as values
-  """
-  def __init__(self,vocab_path,special_tokens=[]):
-    with open(vocab_path,'r') as f:
-      self.token_to_id = json.load(f)
-    assert self.token_to_id is not None and type(self.token_to_id) == dict, " vocab did not load correctly "
-
-    self.id_to_token = {}
-    for token,id in self.token_to_id.items():
-      self.token_to_id[token] = id
-      self.id_to_token[id] = token
-
-    self.special_tokens_ids = []
-    for token in special_tokens:
-      self.special_tokens_ids.append(self.token_to_id[token])
-
-  def decode(self,token_ids):
-    """
-    takes a list of token ids and returns the decoded string skipping special tokens
-    """
-    tokens = []
-    for id in token_ids:
-      if id in self.special_tokens_ids:
-        continue
-      tokens.append(self.id_to_token[id])
-    return "".join(tokens)
-
 def softmax(x, dim=-1):
   """ computes softmax over a given dim """
   exponential = torch.exp(x)
