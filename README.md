@@ -42,7 +42,7 @@ lrs = []
 losses = []
 
 my_model.train()
-for step in tqdm.tqdm(range(num_total_steps)):
+for step in range(num_total_steps):
   
   xbatch, ybatch = train_data_loader.get_batch(batch_size)
   xbatch = xbatch.to(device)
