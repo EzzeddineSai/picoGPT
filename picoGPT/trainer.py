@@ -99,7 +99,7 @@ class Trainer:
     def __init__(self, model, num_total_steps, max_lr, min_lr, num_warmup_steps, beta_1, beta_2, weight_decay):
         self.model = model
         self.optimizer = AdamW(model.parameters(), init_lr=0, beta_1=beta_1, beta_2=beta_2,weight_decay=weight_decay)
-        self.scheduler = CosineScheduleWithWarmUp(num_total_steps, num_total_steps, max_lr, min_lr)
+        self.scheduler = CosineScheduleWithWarmUp(num_warmup_steps, num_total_steps, max_lr, min_lr)
 
     def step(self, xbatch, ybatch):
         current_learning_rate = self.scheduler.get_lr()

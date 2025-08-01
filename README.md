@@ -9,6 +9,4 @@ In addition GPT2, this includes a clear implementation of:
 - a data loader and a decoder
 - AdamW with clipping, and a cosine scheduler with warmup
 
-# Installation
-
-# Usage
+## Usage
