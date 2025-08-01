@@ -1,4 +1,4 @@
-from data_loader import Decoder, DataLoader
+from .data_loader import Decoder, DataLoader
 from huggingface_hub import hf_hub_download
 import os
 
