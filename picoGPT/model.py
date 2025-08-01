@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from functional import softmax, cross_entropy, gelu
+from .functional import softmax, cross_entropy, gelu
 
 class Linear(nn.Module):
   """ a standard linear layer """
