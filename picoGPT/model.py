@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import math
 from functional import softmax, cross_entropy, gelu
 
 class Linear(nn.Module):
